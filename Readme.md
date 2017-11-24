@@ -16,6 +16,12 @@ brew install gpg
 gpg --gen-key
 ```
 Take note of the gpg fingerprint key, for this test example we have `2E3DB643E57A3A0CE87C19CF656F6D8AC99D96EE`.
+
+Add `export GPG_TTY=$(tty)` to your .bash or .zshrc profile
+```
+echo 'export GPG_TTY=$(tty)' >> ~/.zshrc
+source ~/.zshrc
+```
 ```sh
 gpg --export-secret-keys >~/.gnupg/secring.gpg
 ```
