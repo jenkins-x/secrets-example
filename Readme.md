@@ -62,6 +62,22 @@ cat secrets.yaml.dec
 ```
 Files can now be committed and pushed to a public repo providing you added the `.dec` extension to the project .gitignore.
 
+### Sharing public keys
+
+You can add multiple keys to a `.sops.yaml` file, if you do this to decode you need all public keys as well as one connected master (private key)
+
+To share your public key run:
+```
+gpg --list-keys
+```
+To get the name and then:
+```
+gpg --armor --export Joe Blogs
+```
+You can now share this and others can import it
+
+For OSX we can use https://gpgtools.org/ to import / export too
+
 ## FAQ
 
 ### ERROR: Could not load secring: open ~/.gnupg/secring.gpg: no such file or
